@@ -1,3 +1,5 @@
+let s:watched_line = "/org/freedesktop/portal/desktop: org.freedesktop.portal.Settings.SettingChanged ('org.freedesktop.appearance', 'color-scheme', <uint32 "
+
 func lumen#platforms#linux#watch_cmd()
 	" TODO: Implement our own dbus client to get rid of the gdbus dependency
 	" dbus is just communicating with an Unix socket after all
@@ -5,7 +7,7 @@ func lumen#platforms#linux#watch_cmd()
 endfunc
 
 func lumen#platforms#linux#parse_line(line)
-	if match(a:line, "/org/freedesktop/portal/desktop: org.freedesktop.portal.Settings.SettingChanged ('org.freedesktop.appearance', 'color-scheme', <uint32 ") == 0
+	if match(a:line, s:watched_line) == 0
 		" 0 is ASCII 48
 		let val = strgetchar(a:line, strchars(a:line) - 3) - 48
 		" 0 = No preference
@@ -18,5 +20,12 @@ func lumen#platforms#linux#parse_line(line)
 			" Perhaps a g:my_next_de_wont_be_gnome variable should optionally enable this workaround instead
 			call lumen#dark_hook()
 		endif
+	endif
+endfunc
+
+func lumen#platforms#linux#oneshot()
+	let out = system('gdbus call --session --dest=org.freedesktop.portal.Desktop --object-path=/org/freedesktop/portal/desktop --method=org.freedesktop.portal.Settings.Read org.freedesktop.appearance color-scheme')
+	if match(out, "(<<uint32 ") == 0
+		call lumen#platforms#linux#parse_line(s:watched_line . strcharpart(out, 10, 1) . ">)")
 	endif
 endfunc

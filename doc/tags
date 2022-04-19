@@ -1,3 +1,4 @@
+g:lumen_startup_overwrite	lumen.txt	/*g:lumen_startup_overwrite*
 lumen	lumen.txt	/*lumen*
 lumen-configure	lumen.txt	/*lumen-configure*
 lumen-contents	lumen.txt	/*lumen-contents*

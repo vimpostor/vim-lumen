@@ -1,4 +1,8 @@
 func lumen#init()
+	if !exists('g:lumen_startup_overwrite')
+		let g:lumen_startup_overwrite = 0
+	endif
+
 	let s:is_nvim = has('nvim')
 
 	augroup lumeni
@@ -16,6 +20,10 @@ endfunc
 
 func lumen#dark_hook()
 	set background=dark
+endfunc
+
+func lumen#oneshot()
+	call lumen#platforms#call("oneshot")
 endfunc
 
 func lumen#parse_output(line)
@@ -37,6 +45,10 @@ endfunc
 
 func lumen#fork_job()
 	au! lumeni
+
+	if g:lumen_startup_overwrite
+		call lumen#oneshot()
+	endif
 
 	let command = lumen#platforms#call("watch_cmd")
 	if s:is_nvim

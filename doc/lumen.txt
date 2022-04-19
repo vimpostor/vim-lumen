@@ -13,10 +13,27 @@ This plugin enables vim to follow the global system-wide dark mode preference
 of your platform.
 At the moment, the only supported platform is Linux.
 
-------------------------------------------------------------------------------
-Configuration						*lumen-configure*
+On Linux it is required to have one of the following installed:
 
-There is nothing here yet, come back later.
+- KDE Plasma 5.24 or later
+- Gnome 42 or later
+- https://gitlab.gnome.org/exalm/color-scheme-simulator
+- https://gitlab.com/WhyNotHugo/darkman
+
+Once a system dark mode preference change is detected, the |background|
+variable will be changed, which will automatically cause the current
+colorscheme to be reloaded if the colorscheme supports live reloading.
+
+------------------------------------------------------------------------------
+CONFIGURATION						*lumen-configure*
+
+	g:lumen_startup_overwrite			*g:lumen_startup_overwrite*
+		By default, |lumen| will rely on vim's own mechanism to detect
+		the correct value for |background| at startup, thus by default
+		|lumen| will only listen to runtime changes. If you enable
+		this option with `let g:lumen_startup_overwrite = 1`, you will
+		cause this plugin to also take over the startup detection by
+		reading the system-wide dark mode preference of your platform.
 
 ==============================================================================
 	vim:tw=78:sw=4:ts=8:ft=help:norl:noet:
