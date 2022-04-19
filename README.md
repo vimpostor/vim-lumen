@@ -2,7 +2,7 @@
 
 This plugin enables vim to follow the global system-wide dark mode preference of your platform.
 
-![Video](https://user-images.githubusercontent.com/21310755/164111487-7581819f-76c4-4fc3-a462-df14ad3a8c5b.mov)
+https://user-images.githubusercontent.com/21310755/164111487-7581819f-76c4-4fc3-a462-df14ad3a8c5b.mov
 
 At the moment, the only supported platform is Linux, but PRs are highly welcome to add support for other platforms.
 
