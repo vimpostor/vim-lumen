@@ -13,7 +13,7 @@ This plugin enables vim to follow the global system-wide dark mode preference
 of your platform.
 At the moment, the only supported platform is Linux.
 
-On Linux it is required to have one of the following installed:
+On Linux it is required to have `gdbus` and one of the following installed:
 
 - KDE Plasma 5.24 or later
 - Gnome 42 or later
