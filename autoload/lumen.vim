@@ -51,6 +51,10 @@ func lumen#fork_job()
 	endif
 
 	let command = lumen#platforms#call("watch_cmd")
+	if empty(command)
+		return
+	endif
+
 	if s:is_nvim
 		let s:lines = ['']
 		let options = {"on_stdout": function('lumen#on_stdout')}
