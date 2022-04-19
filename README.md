@@ -6,12 +6,20 @@ https://user-images.githubusercontent.com/21310755/164111487-7581819f-76c4-4fc3-
 
 At the moment, the only supported platform is Linux, but PRs are highly welcome to add support for other platforms.
 
+# Installation
+
+With `vim-plug` add the following line to your `.vimrc`:
+
+```vim
+Plug 'vimpostor/vim-lumen'
+```
+
 # Dependencies
 
 On Linux it is required that you have `gdbus` installed together with **one** of the following options:
 
-- KDE Plasma 5.24 or later or
-- Gnome 42 or later or
+- KDE Plasma 5.24 (or later) or
+- Gnome 42 (or later) or
 - [third-party color-scheme-simulator](https://gitlab.gnome.org/exalm/color-scheme-simulator) or
 - [darkman](https://gitlab.com/WhyNotHugo/darkman)
 
