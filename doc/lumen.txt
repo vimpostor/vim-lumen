@@ -1,0 +1,22 @@
+*lumen.txt*	System-wide dark mode preference support
+*lumen*
+
+CONTENTS						*lumen-contents*
+
+Introduction					|lumen-introduction|
+Configuration					|lumen-configure|
+
+==============================================================================
+INTRODUCTION						*lumen-introduction*
+
+This plugin enables vim to follow the global system-wide dark mode preference
+of your platform.
+At the moment, the only supported platform is Linux.
+
+------------------------------------------------------------------------------
+Configuration						*lumen-configure*
+
+There is nothing here yet, come back later.
+
+==============================================================================
+	vim:tw=78:sw=4:ts=8:ft=help:norl:noet:
