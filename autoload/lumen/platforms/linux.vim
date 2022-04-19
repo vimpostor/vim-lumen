@@ -13,7 +13,9 @@ func lumen#platforms#linux#parse_line(line)
 		" 2 = Prefer Light
 		if val == 2
 			call lumen#light_hook()
-		elseif val == 1
+		elseif val == 1 || val == 0
+			" We have to add this workaround, because Gnome returns 0 (No preference) when the user prefers a light theme
+			" Perhaps a g:my_next_de_wont_be_gnome variable should optionally enable this workaround instead
 			call lumen#dark_hook()
 		endif
 	endif
