@@ -42,7 +42,7 @@ AUTOCOMMANDS						*lumen-autocommands*
 A handful of |User| |autocommands| are provided to allow extending this
 plugin's functionality. Example usage:
 >
-	autocmd User LumenDark let $BAT_THEME=gruvbox-dark
+	autocmd User LumenDark let $BAT_THEME="gruvbox-dark"
 <
 							*User_LumenLight*
 LumenLight		After switching |background| to `light`.
