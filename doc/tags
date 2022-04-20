@@ -1,5 +1,8 @@
+User_LumenDark	lumen.txt	/*User_LumenDark*
+User_LumenLight	lumen.txt	/*User_LumenLight*
 g:lumen_startup_overwrite	lumen.txt	/*g:lumen_startup_overwrite*
 lumen	lumen.txt	/*lumen*
+lumen-autocommands	lumen.txt	/*lumen-autocommands*
 lumen-configure	lumen.txt	/*lumen-configure*
 lumen-contents	lumen.txt	/*lumen-contents*
 lumen-introduction	lumen.txt	/*lumen-introduction*

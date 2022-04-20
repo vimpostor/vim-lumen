@@ -5,6 +5,7 @@ CONTENTS						*lumen-contents*
 
 Introduction					|lumen-introduction|
 Configuration					|lumen-configure|
+Autocommands					|lumen-autocommands|
 
 ==============================================================================
 INTRODUCTION						*lumen-introduction*
@@ -34,6 +35,20 @@ CONFIGURATION						*lumen-configure*
 		this option with `let g:lumen_startup_overwrite = 1`, you will
 		cause this plugin to also take over the startup detection by
 		reading the system-wide dark mode preference of your platform.
+
+------------------------------------------------------------------------------
+AUTOCOMMANDS						*lumen-autocommands*
+
+A handful of |User| |autocommands| are provided to allow extending this
+plugin's functionality. Example usage:
+>
+	autocmd User LumenDark let $BAT_THEME=gruvbox-dark
+<
+							*User_LumenLight*
+LumenLight		After switching |background| to `light`.
+
+							*User_LumenDark*
+LumenDark		After switching |background| to `dark`.
 
 ==============================================================================
 	vim:tw=78:sw=4:ts=8:ft=help:norl:noet:
