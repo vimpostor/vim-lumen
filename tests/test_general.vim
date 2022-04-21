@@ -20,6 +20,7 @@ func Test_changes()
 endfunc
 
 func Test_autocmds()
+	call Change_system_dark_mode(1)
 	let g:test_var = 2
 	let g:count = 0
 
