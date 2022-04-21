@@ -4,7 +4,7 @@ This plugin enables vim to follow the global system-wide dark mode preference of
 
 https://user-images.githubusercontent.com/21310755/164289278-6368d615-e363-4185-a7c1-0f79ae3bf7b1.mov
 
-At the moment, the only supported platform is Linux, but PRs are highly welcome to add support for other platforms.
+At the moment, supported platforms are Linux and MacOS, but PRs are highly welcome to add support for other platforms.
 
 # Installation
 
@@ -14,7 +14,11 @@ With `vim-plug` add the following line to your `.vimrc`:
 Plug 'vimpostor/vim-lumen'
 ```
 
+Once a system dark mode preference change is detected, this plugin will set the `background` vim option accordingly, so make sure that your colorscheme supports reloading as described in `:h 'background'`.
+
 # Dependencies
+
+## Linux
 
 On Linux it is required that you have `gdbus` installed together with **one** of the following options:
 
@@ -23,7 +27,9 @@ On Linux it is required that you have `gdbus` installed together with **one** of
 - [third-party color-scheme-simulator](https://gitlab.gnome.org/exalm/color-scheme-simulator) or
 - [darkman](https://gitlab.com/WhyNotHugo/darkman)
 
-Once a system dark mode preference change is detected, this plugin will set the `background` vim option accordingly, so make sure that your colorscheme supports reloading as described in `:h 'background'`.
+## MacOS
+
+It is required that Swift is available on your system. Swift is shipped with Xcode for example.
 
 # FAQ
 

@@ -4,6 +4,7 @@
 CONTENTS						*lumen-contents*
 
 Introduction					|lumen-introduction|
+Dependencies					|lumen-dependencies|
 Configuration					|lumen-configure|
 Autocommands					|lumen-autocommands|
 
@@ -12,7 +13,14 @@ INTRODUCTION						*lumen-introduction*
 
 This plugin enables vim to follow the global system-wide dark mode preference
 of your platform.
-At the moment, the only supported platform is Linux.
+Supported platforms are Linux and MacOS.
+
+Once a system dark mode preference change is detected, the |background|
+variable will be changed, which will automatically cause the current
+colorscheme to be reloaded if the colorscheme supports live reloading.
+
+------------------------------------------------------------------------------
+DEPENDENCIES						*lumen-dependencies*
 
 On Linux it is required to have `gdbus` and one of the following installed:
 
@@ -21,9 +29,9 @@ On Linux it is required to have `gdbus` and one of the following installed:
 - https://gitlab.gnome.org/exalm/color-scheme-simulator
 - https://gitlab.com/WhyNotHugo/darkman
 
-Once a system dark mode preference change is detected, the |background|
-variable will be changed, which will automatically cause the current
-colorscheme to be reloaded if the colorscheme supports live reloading.
+
+On MacOS it is required that Swift is available, which is shipped with Xcode
+for example.
 
 ------------------------------------------------------------------------------
 CONFIGURATION						*lumen-configure*
