@@ -4,8 +4,6 @@ func lumen#init()
 	endif
 
 	let s:is_nvim = has('nvim')
-	au User LumenLight set background=light
-	au User LumenDark set background=dark
 
 	augroup lumeni
 		if v:vim_did_enter
@@ -17,11 +15,17 @@ func lumen#init()
 endfunc
 
 func lumen#light_hook()
-	doautocmd User LumenLight
+	set background=light
+	if exists('#User#LumenLight')
+		doautocmd User LumenLight
+	endif
 endfunc
 
 func lumen#dark_hook()
-	doautocmd User LumenDark
+	set background=dark
+	if exists('#User#LumenDark')
+		doautocmd User LumenDark
+	endif
 endfunc
 
 func lumen#oneshot()
