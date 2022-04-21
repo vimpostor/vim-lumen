@@ -4,6 +4,9 @@ func lumen#init()
 	endif
 
 	let s:is_nvim = has('nvim')
+	if g:lumen_startup_overwrite
+		call lumen#oneshot()
+	endif
 
 	augroup lumeni
 		if v:vim_did_enter
@@ -51,10 +54,6 @@ endfunc
 
 func lumen#fork_job()
 	au! lumeni
-
-	if g:lumen_startup_overwrite
-		call lumen#oneshot()
-	endif
 
 	let command = lumen#platforms#call("watch_cmd")
 	if empty(command)
