@@ -1,6 +1,7 @@
+let s:path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+
 func lumen#platforms#macos#watch_cmd()
-	let path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
-	return [path . "/autoload/lumen/platforms/macos/watcher.swift"]
+	return [s:path . "/macos/watcher.swift"]
 endfunc
 
 func lumen#platforms#macos#parse_line(line)
