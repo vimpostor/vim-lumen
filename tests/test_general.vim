@@ -4,15 +4,29 @@ func Test_loaded()
 	call assert_equal(1, g:loaded_lumen)
 endfunc
 
-func Check_dark_mode_pref(value, bg)
+func Change_system_dark_mode(value)
 	call writefile([a:value], s:socket)
 	sleep 200m
-	call assert_equal(a:bg, &background)
 endfunc
 
 func Test_changes()
 	" light mode
-	call Check_dark_mode_pref(2, "light")
+	call Change_system_dark_mode(2)
+	call assert_equal("light", &background)
+
 	" dark mode
-	call Check_dark_mode_pref(1, "dark")
+	call Change_system_dark_mode(1)
+	call assert_equal("dark", &background)
+endfunc
+
+func Test_autocmds()
+	let g:test_var = 2
+
+	au User LumenLight let g:test_var = 2
+	call Change_system_dark_mode(2)
+	call assert_equal(2, g:test_var)
+
+	au User LumenDark let g:test_var = 1
+	call Change_system_dark_mode(1)
+	call assert_equal(1, g:test_var)
 endfunc
