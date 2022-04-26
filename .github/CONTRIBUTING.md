@@ -2,7 +2,7 @@
 
 ## Issues and bug reports
 When reporting issues, please include your vim config if relevant. If you don't know what parts of your config are relevant, it is okay to just paste your entire config.
-Often it is also helpful to know what terminal emulator you are using.
+Often it is also helpful to include the output of `:echo lumen#debug#info()`.
 
 ## Development
 Code contributions are much welcomed and appreciated.

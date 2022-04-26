@@ -17,3 +17,7 @@ func lumen#platforms#call(func, ...)
 	let Func = function("lumen#platforms#" . s:platform . "#" . a:func, args)
 	return Func()
 endfunc
+
+func lumen#platforms#platform()
+	return s:platform
+endfunc

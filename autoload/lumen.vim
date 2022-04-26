@@ -69,3 +69,11 @@ func lumen#fork_job()
 		let s:job = job_start(command, options)
 	endif
 endfunc
+
+func lumen#job_state()
+	if s:is_nvim
+		let pid = jobpid(s:job)
+		return pid ? "run as PID " . pid : "dead"
+	else
+		return job_status(s:job)
+endfunc
