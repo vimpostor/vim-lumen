@@ -63,7 +63,7 @@ func lumen#fork_job()
 	if s:is_nvim
 		let s:lines = ['']
 		let options = {"on_stdout": function('lumen#on_stdout')}
-		let s:job = jobstart(command, options)
+		silent! let s:job = jobstart(command, options)
 	else
 		let options = {"out_cb": function('lumen#out_cb')}
 		let s:job = job_start(command, options)
