@@ -1,7 +1,6 @@
 #!/usr/bin/env swift
 
-// Based on https://github.com/bouk/dark-mode-notify/blob/main/dark-mode-notify.swift (MIT license)
-// Which itself is based on https://github.com/mnewt/dotemacs/blob/master/bin/dark-mode-notifier.swift (Unlicense license)
+// Based on https://github.com/mnewt/dotemacs/blob/master/bin/dark-mode-notifier.swift (Unlicense license)
 
 import Cocoa
 import Darwin

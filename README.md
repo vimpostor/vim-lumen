@@ -24,8 +24,8 @@ On Linux it is required that you have `gdbus` installed together with **one** of
 
 - KDE Plasma 5.24 (or later) or
 - Gnome 42 (or later) or
-- [third-party color-scheme-simulator](https://gitlab.gnome.org/exalm/color-scheme-simulator) or
-- [darkman](https://gitlab.com/WhyNotHugo/darkman)
+- [darkman](https://gitlab.com/WhyNotHugo/darkman) (Recommended for tiling WMs) or
+- [color-scheme-simulator](https://gitlab.gnome.org/exalm/color-scheme-simulator)
 
 ## MacOS
 
