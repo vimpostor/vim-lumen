@@ -7,9 +7,3 @@ set t_te=
 
 " do not show Press ENTER to continue prompts
 set nomore
-
-" init fake gdbus
-call writefile(["0"], "/tmp/socket")
-" use this plugin
-call lumen#init()
-call lumen#fork_job()
