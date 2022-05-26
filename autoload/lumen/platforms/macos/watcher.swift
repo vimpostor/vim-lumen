@@ -5,6 +5,8 @@
 import Cocoa
 import Darwin
 
+setbuf(stdout, nil); // don't buffer the output. thats why print() didn't work.
+
 var isAppearanceDark: Bool {
 	if #available(macOS 11.0, *) {
 		return NSAppearance.currentDrawing().bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
@@ -14,9 +16,7 @@ var isAppearanceDark: Bool {
 }
 
 func printAppearance() {
-	let string = isAppearanceDark ? "LDark" : "Light"
-	try! FileHandle.standardOutput.write(contentsOf: Data((string + "\n").utf8))
-	// print(string) // doesn't work for some strange reason?!
+	print(isAppearanceDark ? "Dark_" : "Light")
 }
 
 if CommandLine.arguments.dropFirst(1).first == "get" {
