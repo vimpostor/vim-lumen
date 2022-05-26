@@ -13,9 +13,8 @@ func lumen#platforms#macos#parse_line(line)
 endfunc
 
 func lumen#platforms#macos#oneshot()
-	let out = system(printf("%s get || swiftc %s.swift -o %s",s:exe,s:exe,s:exe))
+	let out = system(printf("%s get || swiftc %s.swift -o %s", s:exe, s:exe, s:exe))
 	if len(out) != 6
-		echom v:shell_error
 		" fallback
 		let out = system(s:exe . ".swift get")
 	endif
