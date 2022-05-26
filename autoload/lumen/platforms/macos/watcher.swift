@@ -14,7 +14,7 @@ var isAppearanceDark: Bool {
 }
 
 func printAppearance() {
-	let string = isAppearanceDark ? "Dark" : "Light"
+	let string = isAppearanceDark ? "LDark" : "Light"
 	try! FileHandle.standardOutput.write(contentsOf: Data((string + "\n").utf8))
 	// print(string) // doesn't work for some strange reason?!
 }
