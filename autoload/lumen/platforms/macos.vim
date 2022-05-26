@@ -5,7 +5,7 @@ func lumen#platforms#macos#watch_cmd()
 endfunc
 
 func lumen#platforms#macos#parse_line(line)
-	if a:line =~ "^Dark_.*"
+	if a:line == "Dark_"
 		call lumen#dark_hook()
 	else
 		call lumen#light_hook()
@@ -13,10 +13,10 @@ func lumen#platforms#macos#parse_line(line)
 endfunc
 
 func lumen#platforms#macos#oneshot()
-	let out = system(printf("%s get || swiftc %s.swift -o %s", s:exe, s:exe, s:exe))
-	if len(out) != 6
+	let out = systemlist(printf("%s get || swiftc %s.swift -o %s", s:exe, s:exe, s:exe))[0]
+	if len(out) != 5
 		" fallback
-		let out = system(s:exe . ".swift get")
+		let out = systemlist(s:exe . ".swift get")[0]
 	endif
 	call lumen#platforms#macos#parse_line(out)
 endfunc
