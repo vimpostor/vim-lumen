@@ -43,15 +43,6 @@ Neovim recently merged [support for SIGWINCH autocmds](https://github.com/neovim
 - `SIGWINCH` is not really intended for this usecase at all. You are abusing a signal that is originally only meant to be fired when the terminal size changes
 - There is only `SIGWINCH` support in `neovim`, whereas this plugin also supports regular vim
 
-## How can I make this plugin follow the dark mode preference on startup already?
-
-By default vim already tries to guess the correct value for `background` on startup. Therefore by default this plugin does not get in the way of vim's internal detection mechanism and is only responsible for changes during runtime.
-If you'd also like this plugin to detect the system-wide dark mode preference of your platform on startup, use:
-
-```vim
-let g:lumen_startup_overwrite = 1
-```
-
 ## How can I add custom callbacks?
 
 You can use the `LumenLight` and `LumenDark` `User` autocommands:

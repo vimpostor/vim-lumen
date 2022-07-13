@@ -1,6 +1,6 @@
 func lumen#init()
 	if !exists('g:lumen_startup_overwrite')
-		let g:lumen_startup_overwrite = 0
+		let g:lumen_startup_overwrite = 1
 	endif
 
 	let s:is_nvim = has('nvim')

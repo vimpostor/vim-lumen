@@ -37,12 +37,12 @@ for example.
 CONFIGURATION						*lumen-configure*
 
 	g:lumen_startup_overwrite			*g:lumen_startup_overwrite*
-		By default, |lumen| will rely on vim's own mechanism to detect
-		the correct value for |background| at startup, thus by default
-		|lumen| will only listen to runtime changes. If you enable
-		this option with `let g:lumen_startup_overwrite = 1`, you will
-		cause this plugin to also take over the startup detection by
-		reading the system-wide dark mode preference of your platform.
+		By default, |lumen| will overrule vim's own mechanism to
+		detect the correct value for |background| at startup. If you
+		disable this option with `let g:lumen_startup_overwrite = 0`,
+		this plugin will only listen for changes during runtime and
+		will no longer influence vim's internal detection mechanism at
+		startup.
 
 ------------------------------------------------------------------------------
 AUTOCOMMANDS						*lumen-autocommands*
