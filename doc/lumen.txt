@@ -26,8 +26,8 @@ On Linux it is required to have `gdbus` and one of the following installed:
 
 - KDE Plasma 5.24 or later
 - Gnome 42 or later
-- https://gitlab.gnome.org/exalm/color-scheme-simulator
 - https://gitlab.com/WhyNotHugo/darkman
+- https://gitlab.gnome.org/exalm/color-scheme-simulator
 
 
 On MacOS it is required that Swift is available, which is shipped with Xcode
