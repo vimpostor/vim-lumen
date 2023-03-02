@@ -1,2 +1,3 @@
 *.swp
 *.log
+autoload/lumen/platforms/macos/watcher
