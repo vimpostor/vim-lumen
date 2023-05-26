@@ -14,6 +14,8 @@ With `vim-plug` add the following line to your `.vimrc`:
 Plug 'vimpostor/vim-lumen'
 ```
 
+Reload `.vimrc` and run `:PlugInstall` to install it.
+
 Once a system dark mode preference change is detected, this plugin will set the `background` vim option accordingly, so make sure that your colorscheme supports reloading as described in `:h 'background'`.
 
 # Dependencies
