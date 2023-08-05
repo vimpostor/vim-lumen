@@ -76,4 +76,5 @@ func lumen#job_state()
 		return pid ? "run as PID " . pid : "dead"
 	else
 		return job_status(s:job)
+	endif
 endfunc
