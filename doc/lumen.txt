@@ -29,6 +29,8 @@ On Linux it is required to have `gdbus` and one of the following installed:
 - https://gitlab.com/WhyNotHugo/darkman
 - https://gitlab.gnome.org/exalm/color-scheme-simulator
 
+Make sure that the `xdg-desktop-portal` is running.
+
 
 On MacOS it is required that Swift is available, which is shipped with Xcode
 for example.

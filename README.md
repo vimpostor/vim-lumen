@@ -27,6 +27,8 @@ On Linux it is required that you have `gdbus` installed together with **one** of
 - [darkman](https://gitlab.com/WhyNotHugo/darkman) (Recommended for tiling WMs) or
 - [color-scheme-simulator](https://gitlab.gnome.org/exalm/color-scheme-simulator)
 
+Make sure that the `xdg-desktop-portal` is running.
+
 ## MacOS
 
 It is required that Swift is available on your system. Swift is shipped with Xcode for example.
