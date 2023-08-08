@@ -4,7 +4,7 @@ This plugin enables vim to follow the global system-wide dark mode preference of
 
 https://user-images.githubusercontent.com/21310755/225781457-2a1e4f26-fbd5-4c08-a75e-2c2f931488b3.mp4
 
-At the moment, supported platforms are **Linux** and **MacOS**, but PRs are highly welcome to add support for other platforms.
+Supported platforms are **Linux**, **MacOS** and **Windows**. All platform implementations are interrupt-based and do not use any resources polling for settings, like most other plugins do.
 
 # Installation
 
@@ -32,6 +32,10 @@ Make sure that the `xdg-desktop-portal` is running.
 ## MacOS
 
 It is required that Swift is available on your system. Swift is shipped with Xcode for example.
+
+## Windows
+
+At least Windows 10 1903 is required. No further installed components are needed.
 
 # FAQ
 

@@ -13,11 +13,14 @@ INTRODUCTION						*lumen-introduction*
 
 This plugin enables vim to follow the global system-wide dark mode preference
 of your platform.
-Supported platforms are Linux and MacOS.
+Supported platforms are Linux, MacOS and Windows.
 
 Once a system dark mode preference change is detected, the |background|
 variable will be changed, which will automatically cause the current
 colorscheme to be reloaded if the colorscheme supports live reloading.
+
+All platform implementations are interrupt-based and do not use any resources
+polling for settings.
 
 ------------------------------------------------------------------------------
 DEPENDENCIES						*lumen-dependencies*
@@ -34,6 +37,10 @@ Make sure that the `xdg-desktop-portal` is running.
 
 On MacOS it is required that Swift is available, which is shipped with Xcode
 for example.
+
+
+On Windows at least Windows 10 1903 is required. No further installed
+components are needed.
 
 ------------------------------------------------------------------------------
 CONFIGURATION						*lumen-configure*

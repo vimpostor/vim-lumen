@@ -3,6 +3,8 @@ if has('linux')
 	let s:platform = 'linux'
 elseif has('osx')
 	let s:platform = 'macos'
+elseif has('win32')
+	let s:platform = 'windows'
 endif
 
 func lumen#platforms#call(func, ...)
