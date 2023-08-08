@@ -1,5 +1,3 @@
-let s:background = ""
-
 func lumen#init()
 	if !exists('g:lumen_startup_overwrite')
 		let g:lumen_startup_overwrite = 1
@@ -20,24 +18,14 @@ func lumen#init()
 endfunc
 
 func lumen#light_hook()
-	if s:background == 'light' && &background == s:background
-		return
-	endif
-
 	set background=light
-	let s:background = &background
 	if exists('#User#LumenLight')
 		doautocmd User LumenLight
 	endif
 endfunc
 
 func lumen#dark_hook()
-	if s:background == 'dark' && &background == s:background
-		return
-	endif
-
 	set background=dark
-	let s:background = &background
 	if exists('#User#LumenDark')
 		doautocmd User LumenDark
 	endif
