@@ -64,6 +64,19 @@ func lumen#out_cb(channel, msg)
 	call lumen#parse_output(a:msg)
 endfunc
 
+func lumen#on_stderr(chan_id, data, name)
+	let s:elines[-1] .= a:data[0]
+	call extend(s:elines, a:data[1:])
+	while len(s:elines) > 1
+		let line = remove(s:elines, 0)
+		call lumen#debug#log_err(line)
+	endwhile
+endfunc
+
+func lumen#err_cb(channel, msg)
+	call lumen#debug#log_err(a:msg)
+endfunc
+
 func lumen#fork_job()
 	au! lumeni
 
@@ -74,10 +87,11 @@ func lumen#fork_job()
 
 	if s:is_nvim
 		let s:lines = ['']
-		let options = {"on_stdout": function('lumen#on_stdout')}
+		let s:elines = ['']
+		let options = {"on_stdout": function('lumen#on_stdout'), "on_stderr": function('lumen#on_stderr')}
 		silent! let s:job = jobstart(command, options)
 	else
-		let options = {"out_cb": function('lumen#out_cb')}
+		let options = {"out_cb": function('lumen#out_cb'), "err_cb": function('lumen#err_cb')}
 		let s:job = job_start(command, options)
 	endif
 endfunc
