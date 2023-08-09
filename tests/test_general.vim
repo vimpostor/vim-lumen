@@ -97,4 +97,7 @@ func Test_duplicate_hooks()
 	call Change_system_dark_mode(1)
 	call assert_equal(2, g:light_count)
 	call assert_equal(2, g:dark_count)
+
+	au! User LumenLight
+	au! User LumenDark
 endfunc
