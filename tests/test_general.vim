@@ -1,11 +1,11 @@
 let s:socket = "/tmp/socket"
 
 func SetUp()
-	" init fake gdbus
-	call writefile(["0"], s:socket)
 	" init plugin manually, because VimEnter is not triggered
 	call lumen#init()
 	call lumen#fork_job()
+	" init fake gdbus
+	call Change_system_dark_mode(0)
 endfunc
 
 func Test_loaded()
