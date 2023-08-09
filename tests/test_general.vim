@@ -30,22 +30,71 @@ endfunc
 func Test_autocmds()
 	call Change_system_dark_mode(1)
 	let g:test_var = 0
-	let g:count = 0
+	let g:light_count = 0
+	let g:dark_count = 0
 
-	" Make sure that no duplicate autocommands are fired
-	au User LumenLight let g:count += 1
-	au User LumenDark let g:count += 1
+	" Make sure that the correct autocommands are triggered
+	au User LumenLight let g:light_count += 1
+	au User LumenDark let g:dark_count += 1
 
 	au User LumenLight let g:test_var = 2
 	call Change_system_dark_mode(2)
 	call assert_equal(2, g:test_var)
-	call assert_equal(1, g:count)
+	call assert_equal(1, g:light_count)
+	call assert_equal(0, g:dark_count)
 
 	au User LumenDark let g:test_var = 1
 	call Change_system_dark_mode(1)
 	call assert_equal(1, g:test_var)
-	call assert_equal(2, g:count)
+	call assert_equal(1, g:light_count)
+	call assert_equal(1, g:dark_count)
 
 	au! User LumenLight
 	au! User LumenDark
+endfunc
+
+func Test_duplicate_hooks()
+	call Change_system_dark_mode(1)
+	let g:light_count = 0
+	let g:dark_count = 0
+	" if two light (or two dark) hooks follow
+	" without a dark hook (light hook respectively) inbetween,
+	" then the User autocommands should only be triggered once
+	au User LumenLight let g:light_count += 1
+	au User LumenDark let g:dark_count += 1
+	call assert_equal(0, g:light_count)
+	call assert_equal(0, g:dark_count)
+
+	call Change_system_dark_mode(1)
+	call assert_equal(0, g:light_count)
+	call assert_equal(0, g:dark_count)
+
+	call Change_system_dark_mode(2)
+	call assert_equal(1, g:light_count)
+	call assert_equal(0, g:dark_count)
+
+	call Change_system_dark_mode(2)
+	" doesn't trigger again
+	call assert_equal(1, g:light_count)
+	call assert_equal(0, g:dark_count)
+
+	call Change_system_dark_mode(2)
+	call assert_equal(1, g:light_count)
+	call assert_equal(0, g:dark_count)
+
+	call Change_system_dark_mode(1)
+	call assert_equal(1, g:light_count)
+	call assert_equal(1, g:dark_count)
+
+	call Change_system_dark_mode(1)
+	call assert_equal(1, g:light_count)
+	call assert_equal(1, g:dark_count)
+
+	call Change_system_dark_mode(2)
+	call assert_equal(2, g:light_count)
+	call assert_equal(1, g:dark_count)
+
+	call Change_system_dark_mode(1)
+	call assert_equal(2, g:light_count)
+	call assert_equal(2, g:dark_count)
 endfunc
