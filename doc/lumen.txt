@@ -20,7 +20,8 @@ variable will be changed, which will automatically cause the current
 colorscheme to be reloaded if the colorscheme supports live reloading.
 
 All platform implementations are interrupt-based and do not use any resources
-polling for settings.
+in the background because they avoid polling and use the proper system APIs
+instead.
 
 ------------------------------------------------------------------------------
 DEPENDENCIES						*lumen-dependencies*
