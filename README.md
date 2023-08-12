@@ -53,6 +53,5 @@ Neovim recently merged [support for SIGWINCH autocmds](https://github.com/neovim
 
 - You require a terminal that sends `SIGWINCH` when the system-wide dark mode preference changes. At the moment, pretty much no terminal supports this besides `iTerm`
 - The `SIGWINCH` event is fired regularly for other events. For example while resizing the window, `SIGWINCH` can be emitted many times per second, which causes performance issues due to checking the system dark mode preference multiple times per second
-- This plugin is interrupted immediately after the system-wide dark mode preference changes thus eliminating the need to manually look up the dark mode preference
 - `SIGWINCH` is not really intended for this usecase at all. You are abusing a signal that is originally only meant to be fired when the terminal size changes
 - There is only `SIGWINCH` support in `neovim`, whereas this plugin also supports regular vim

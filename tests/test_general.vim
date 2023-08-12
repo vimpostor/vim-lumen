@@ -17,6 +17,14 @@ func Change_system_dark_mode(value)
 	sleep 200m
 endfunc
 
+func Test_job_runs()
+	let job = lumen#debug#info()
+	" background job is still running
+	call assert_match("^run", job.job_state)
+	" no errors
+	call assert_true(job.job_errors->empty())
+endfunc
+
 func Test_changes()
 	" light mode
 	call Change_system_dark_mode(2)

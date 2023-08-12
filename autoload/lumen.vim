@@ -1,4 +1,5 @@
 let s:background = ""
+let s:exit_code = -1
 
 func lumen#init()
 	if !exists('g:lumen_startup_overwrite')
@@ -77,6 +78,14 @@ func lumen#err_cb(channel, msg)
 	call lumen#debug#log_err(a:msg)
 endfunc
 
+func lumen#on_exit(job, code, t)
+	let s:exit_code = a:code
+endfunc
+
+func lumen#exit_cb(job, code)
+	let s:exit_code = a:code
+endfunc
+
 func lumen#fork_job()
 	au! lumeni
 
@@ -88,19 +97,25 @@ func lumen#fork_job()
 	if s:is_nvim
 		let s:lines = ['']
 		let s:elines = ['']
-		let options = {"on_stdout": function('lumen#on_stdout'), "on_stderr": function('lumen#on_stderr')}
+		let options = {"on_stdout": function('lumen#on_stdout'), "on_stderr": function('lumen#on_stderr'), "on_exit" : function('lumen#on_exit')}
 		silent! let s:job = jobstart(command, options)
 	else
-		let options = {"out_cb": function('lumen#out_cb'), "err_cb": function('lumen#err_cb')}
+		let options = {"out_cb": function('lumen#out_cb'), "err_cb": function('lumen#err_cb'), "exit_cb": function('lumen#exit_cb')}
 		let s:job = job_start(command, options)
 	endif
 endfunc
 
 func lumen#job_state()
+	let res = ""
 	if s:is_nvim
 		let pid = jobpid(s:job)
-		return pid ? "run as PID " . pid : "dead"
+		let res = pid ? "run as PID " . pid : "dead"
 	else
-		return job_status(s:job)
+		let res = job_status(s:job)
 	endif
+	if s:exit_code > -1
+		let res .= printf(" (exit code %d)", s:exit_code)
+	endif
+
+	return res
 endfunc
