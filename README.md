@@ -49,6 +49,7 @@ au User LumenDark echom 'Entered dark mode'
 
 ## What are some good light colorschemes?
 
+There are not many colorschemes that work well both in light and dark mode.
 Here are some example colorschemes that I can personally recommend:
 
 - [papercolor](https://github.com/NLKNguyen/papercolor-theme)
