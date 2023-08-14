@@ -47,6 +47,14 @@ au User LumenLight echom 'Entered light mode'
 au User LumenDark echom 'Entered dark mode'
 ```
 
+## What are some good light colorschemes?
+
+Here are some example colorschemes that I can personally recommend:
+
+- [papercolor](https://github.com/NLKNguyen/papercolor-theme)
+- [gruvbox](https://github.com/morhetz/gruvbox)
+- [prism](https://github.com/vimpostor/vim-prism)
+
 ## Why not use the new SIGWINCH autocmd in neovim?
 
 Neovim recently merged [support for SIGWINCH autocmds](https://github.com/neovim/neovim/pull/18029). It is possible to hack together dark mode support by abusing the `SIGWINCH` autocmd, but this has quite a few disadvantages:
