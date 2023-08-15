@@ -22,7 +22,7 @@ func Test_job_runs()
 	" background job is still running
 	call assert_match("^run", job.job_state)
 	" no errors
-	call assert_true(job.job_errors->empty())
+	call assert_true(job.job_errors->empty(), job.job_errors)
 endfunc
 
 func Test_changes()
