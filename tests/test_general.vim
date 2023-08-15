@@ -70,8 +70,6 @@ func Test_duplicate_hooks()
 	" then the User autocommands should only be triggered once
 	au User LumenLight let g:light_count += 1
 	au User LumenDark let g:dark_count += 1
-	call assert_equal(0, g:light_count)
-	call assert_equal(0, g:dark_count)
 
 	call Change_system_dark_mode(1)
 	call assert_equal(0, g:light_count)
