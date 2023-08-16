@@ -99,6 +99,9 @@ func lumen#fork_job()
 		let s:elines = ['']
 		let options = #{on_stdout: function('lumen#on_stdout'), on_stderr: function('lumen#on_stderr'), on_exit: function('lumen#on_exit')}
 		silent! let s:job = jobstart(command, options)
+		if s:job == 0 || s:job == -1
+			call lumen#on_exit(0, 255, 0)
+		endif
 	else
 		let options = #{out_cb: function('lumen#out_cb'), err_cb: function('lumen#err_cb'), exit_cb: function('lumen#exit_cb')}
 		let s:job = job_start(command, options)
