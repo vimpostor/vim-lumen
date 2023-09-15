@@ -53,7 +53,7 @@ There are not many colorschemes that work well both in light and dark mode.
 Here are some example colorschemes that I can personally recommend:
 
 - [papercolor](https://github.com/NLKNguyen/papercolor-theme)
-- [gruvbox](https://github.com/morhetz/gruvbox)
+- [everforest](https://github.com/sainnhe/everforest)
 - [prism](https://github.com/vimpostor/vim-prism)
 
 ## Why not use the new SIGWINCH autocmd in neovim?
