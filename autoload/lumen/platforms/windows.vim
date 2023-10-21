@@ -1,5 +1,5 @@
 func lumen#platforms#windows#watch_cmd()
-	return ["PowerShell.exe", "-ExecutionPolicy", "Bypass", "-File", glob(resolve(expand('<script>:p:h')) . '/windows/watcher.ps1')]
+	return ["powershell.exe", "-ExecutionPolicy", "Bypass", "-File", glob(resolve(expand('<script>:p:h')) . '/windows/watcher.ps1')]
 endfunc
 
 func lumen#platforms#windows#parse_line(line)
