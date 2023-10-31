@@ -36,6 +36,7 @@ It is required that Swift is available on your system. Swift is shipped with Xco
 ## Windows
 
 At least Windows 10 1903 is required. No further installed components are needed.
+This also works inside WSL2.
 
 # FAQ
 
