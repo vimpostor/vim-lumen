@@ -13,11 +13,11 @@ func lumen#platforms#macos#parse_line(line)
 endfunc
 
 func lumen#platforms#macos#oneshot()
-	let out = get(systemlist(printf("%s get || swiftc %s.swift -o %s", s:exe, s:exe, s:exe)), 0)
+	silent let out = get(systemlist(printf("%s get || swiftc %s.swift -o %s", s:exe, s:exe, s:exe)), 0)
 	if len(out) != 5
 		let err = out
 		" fallback
-		let out = get(systemlist(s:exe . ".swift get"), 0)
+		silent let out = get(systemlist(s:exe . ".swift get"), 0)
 	endif
 
 	if len(out) == 5

@@ -15,7 +15,7 @@ func lumen#platforms#windows#parse_line(line)
 endfunc
 
 func lumen#platforms#windows#oneshot()
-	let out = system('reg.exe query "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v AppsUseLightTheme')->trim()->split('\r\n')
+	silent let out = system('reg.exe query "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v AppsUseLightTheme')->trim()->split('\r\n')
 	if len(out)
 		call lumen#platforms#windows#parse_line(out[-1])
 	endif

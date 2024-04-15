@@ -24,7 +24,7 @@ func lumen#platforms#linux#parse_line(line)
 endfunc
 
 func lumen#platforms#linux#oneshot()
-	let out = trim(system('gdbus call -t 1 --session --dest=org.freedesktop.portal.Desktop --object-path=/org/freedesktop/portal/desktop --method=org.freedesktop.portal.Settings.Read org.freedesktop.appearance color-scheme'))
+	silent let out = trim(system('gdbus call -t 1 --session --dest=org.freedesktop.portal.Desktop --object-path=/org/freedesktop/portal/desktop --method=org.freedesktop.portal.Settings.Read org.freedesktop.appearance color-scheme'))
 	if match(out, "(<<uint32 ") == 0
 		call lumen#platforms#linux#parse_line(s:watched_line . strcharpart(out, 10, 1) . ">)")
 	else
