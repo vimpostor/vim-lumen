@@ -20,37 +20,37 @@ func lumen#init()
 	augroup END
 endfunc
 
-func lumen#apply_colorscheme(mode)
+func lumen#apply_colorscheme()
 	" apply colorscheme from g:lumen_light_colorscheme/g:lumen_dark_colorscheme
-	let v = get(g:, printf("lumen_%s_colorscheme", a:mode), '')
+	let v = get(g:, printf("lumen_%s_colorscheme", s:background), '')
 	if len(v) && get(g:, 'colors_name', '') != v
 		exe printf("colorscheme %s", v)
 	endif
 endfunc
 
 func lumen#light_hook()
-	call lumen#apply_colorscheme('light')
-
 	if s:background == 'light' && &background == s:background
 		return
 	endif
 
+
 	set background=light
 	let s:background = &background
+	call lumen#apply_colorscheme()
 	if exists('#User#LumenLight')
 		doautocmd User LumenLight
 	endif
 endfunc
 
 func lumen#dark_hook()
-	call lumen#apply_colorscheme('dark')
-
 	if s:background == 'dark' && &background == s:background
 		return
 	endif
 
+
 	set background=dark
 	let s:background = &background
+	call lumen#apply_colorscheme()
 	if exists('#User#LumenDark')
 		doautocmd User LumenDark
 	endif
