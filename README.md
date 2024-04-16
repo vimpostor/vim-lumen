@@ -55,9 +55,10 @@ Note that for the common usecase of switching the colorscheme, there are the `g:
 There are not many colorschemes that work well both in light and dark mode.
 Here are some example colorschemes that I can personally recommend:
 
-- [papercolor](https://github.com/NLKNguyen/papercolor-theme)
 - [everforest](https://github.com/sainnhe/everforest)
+- [papercolor](https://github.com/NLKNguyen/papercolor-theme)
 - [prism](https://github.com/vimpostor/vim-prism)
+- `retrobox` from the [default Vim colorschemes](https://github.com/vim/colorschemes)
 
 ## Why not use the new SIGWINCH autocmd in neovim?
 
