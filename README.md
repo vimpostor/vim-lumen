@@ -48,6 +48,8 @@ au User LumenLight echom 'Entered light mode'
 au User LumenDark echom 'Entered dark mode'
 ```
 
+Note that for the common usecase of switching the colorscheme, there are the `g:lumen_light_colorscheme` and `g:lumen_dark_colorscheme` variables.
+
 ## What are some good light colorschemes?
 
 There are not many colorschemes that work well both in light and dark mode.

@@ -54,6 +54,22 @@ CONFIGURATION						*lumen-configure*
 		will no longer influence vim's internal detection mechanism at
 		startup.
 
+	g:lumen_light_colorscheme			*g:lumen_light_colorscheme*
+		This variable defines the colorscheme to change to (if any),
+		when the system switches to light mode. For a more generic
+		callback, consult |User_LumenLight|.
+		For example `let g:lumen_light_colorscheme = 'retrobox'` is
+		equivalent to `autocmd User LumenLight colorscheme retrobox`,
+		also see |g:lumen_dark_colorscheme|.
+
+	g:lumen_dark_colorscheme			*g:lumen_dark_colorscheme*
+		This variable defines the colorscheme to change to (if any),
+		when the system switches to dark mode. For a more generic
+		callback, consult |User_LumenDark|.
+		For example `let g:lumen_dark_colorscheme = 'retrobox'` is
+		equivalent to `autocmd User LumenDark colorscheme retrobox`,
+		also see |g:lumen_light_colorscheme|.
+
 ------------------------------------------------------------------------------
 AUTOCOMMANDS						*lumen-autocommands*
 
