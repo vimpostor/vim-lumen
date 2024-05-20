@@ -1,4 +1,4 @@
-let s:exe = shellescape(resolve(expand('<sfile>:p:h')) . '/macos/watcher')
+let s:exe = fnameescape(resolve(expand('<sfile>:p:h')) . '/macos/watcher')
 
 func lumen#platforms#macos#watch_cmd()
 	return [s:exe]
