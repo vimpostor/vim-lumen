@@ -5,7 +5,7 @@
 import Cocoa
 import Darwin
 
-setbuf(stdout, nil); // don't buffer the output. thats why print() didn't work.
+setbuf(stdout, nil); // don't buffer the output
 
 var isAppearanceDark: Bool {
 	if #available(macOS 11.0, *) {
