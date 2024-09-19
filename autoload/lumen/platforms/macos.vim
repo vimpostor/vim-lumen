@@ -16,7 +16,7 @@ func lumen#platforms#macos#oneshot()
 	silent let out = get(systemlist(printf("%s get", s:exe)), 0)
 	if len(out) != 5
 		let err = out
-		silent let compile = system(printf("swiftc %s.swift -o %s", s:exe, s:exe))
+		silent let compile = system(printf("swiftc %1$s.swift -o %1$s", s:exe))
 		" fallback
 		silent let out = get(systemlist(s:exe . ".swift get"), 0)
 	endif
