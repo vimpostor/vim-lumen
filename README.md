@@ -40,6 +40,11 @@ This also works inside WSL2.
 
 # FAQ
 
+## Is this plugin still needed with latest Vim?
+
+With Neovim [implementing support](https://github.com/neovim/neovim/pull/31350) for [DEC mode 2031](https://contour-terminal.org/vt-extensions/color-palette-update-notifications/) this plugin has become obsolete.
+You can now use the native support for theme changes by reacting to `autocmd OptionSet background`, as long as the entire chain of your terminal emulator, terminal multiplexer and your version of vim support it.
+
 ## How can I add custom callbacks?
 
 You can use the `LumenLight` and `LumenDark` `User` autocommands:

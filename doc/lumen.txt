@@ -23,6 +23,15 @@ All platform implementations are interrupt-based and do not use any resources
 in the background because they avoid polling and use the proper system APIs
 instead.
 
+Note that this plugin has become obsolete with Vim implementing support for
+DEC mode 2031.
+You can now use the native support for theme changes simply by listening to
+`autocmd OptionSet background`, as long as the entire chain of your terminal
+emulator, terminal multiplexer and your version of vim support it.
+For more information read:
+- https://contour-terminal.org/vt-extensions/color-palette-update-notifications/
+- https://github.com/neovim/neovim/pull/31350
+
 ------------------------------------------------------------------------------
 DEPENDENCIES						*lumen-dependencies*
 
